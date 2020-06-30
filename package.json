@@ -1,0 +1,35 @@
+{
+  "name": "dauth-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js --delay 2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DAIOSFoundation/dauth-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DAIOSFoundation/dauth-node/issues"
+  },
+  "homepage": "https://github.com/DAIOSFoundation/dauth-node#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "sequelize": "^6.2.3",
+    "sequelize-cli": "^6.1.0"
+  }
+}
