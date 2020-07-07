@@ -1,7 +1,7 @@
-import account from "./account";
+import account from "./web/account";
 
 export default (app) => {
   const router = app;
 
-  router.use("/account", account);
+  router.use("/web/account", account);
 };

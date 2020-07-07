@@ -1,4 +1,4 @@
-import loginAccount from "../controllers/account/index";
+import loginAccount from "../../controllers/web/account";
 import { Router } from "express";
 
 const router = Router();

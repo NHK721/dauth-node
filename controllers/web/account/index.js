@@ -1,10 +1,9 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import db from "../../models/index";
+import findOneAdmin from "../../../DAO/web/login";
 
 export default async (req, res) => {
-  console.log(req.body);
-  const user = await db.User.findOne({ where: { email: req.body.email } });
+  const user = findOneAdmin(req.body);
   console.log(user);
   if (user == null) {
     return res.status(403).send({ message: "User not found" });
