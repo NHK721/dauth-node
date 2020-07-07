@@ -1,14 +1,12 @@
 import db from "../../models/index";
 
-const findOneAdmin = async (req) => {
+const findOneAdmin = (req) => {
   try {
-    console.log(req);
-    const sult = await db.Admin.findOne({
+    return db.Admin.findOne({
       where: { email: req.email },
     });
-    return sult;
   } catch (e) {
-    console.log(e);
+    throw e;
   }
 };
 
