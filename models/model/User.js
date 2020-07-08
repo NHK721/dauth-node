@@ -7,6 +7,11 @@ export default (sequelize, DataTypes) => {
         allowNull: false,
         unique: true,
       },
+      name: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+
+      },
       password: {
         type: DataTypes.STRING(300),
         allowNull: false,
