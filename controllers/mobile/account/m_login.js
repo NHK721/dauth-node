@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import findOneAdmin from "../../../DAO/web/findOneAdmin";
+import findOneUser from "../../../DAO/mobile/findOneUser";
 
 export default async (req, res) => {
-  const user = await findOneAdmin(req.body);
+  const user = await findOneUser(req.body);
   if (!user) {
     return res.status(403).send({ message: "User not found" });
   }
