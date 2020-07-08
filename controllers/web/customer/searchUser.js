@@ -12,22 +12,17 @@ export default async (req, res) => {
     if (startDate == null || endDate == null) {
       return res.status(400).send({ message: "NEED FULL DATE" });
     }
-    const data = findAllUser(startDate, endDate);
-    Object.keys(data).forEach(({ account, email }) => {
-      if (account == null || email == null) {
-        return res.status(400).send({ message: "CANT FOUND USER" });
-      }
-      data.account[1] = "*";
-      if (data.account[2]) {
-        data.account[2] = "*";
-      }
-      data.email[1] = "*";
-      data.email[2] = "*";
-      if (data.email[3] != "@") {
-        data.email[3] = "*";
-      }
-    });
+    const users = await findAllUser(startDate, endDate);
+    let data = { users };
+    for (var i = 0; i < data.users.length; i++) {
+      let name = data.users[i].name;
+      let email = data.users[i].email;
+      data.users[i].name = name[0] + "**";
+      data.users[i].email = email[0] + "***@****.com";
+    }
+    return res.status(200).send(data);
   } catch (err) {
-    return res.status(409).send({ message: err });
+    console.log(err);
+    return res.status(409).send({ message: "ERROR" });
   }
 };
