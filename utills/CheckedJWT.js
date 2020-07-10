@@ -1,9 +1,9 @@
-import jwt from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 export default (req) => {
   try {
     const token = req.authentication;
-    const decoded = jwt.verify(token, "wecode");
+    const decoded = jwt.verify(token, 'wecode');
     return decoded;
   } catch (e) {
     return false;

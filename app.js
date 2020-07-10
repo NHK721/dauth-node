@@ -1,7 +1,7 @@
-import express from "express";
-import bodyparser from "body-parser";
-import cors from "cors";
-import routers from "./routes/index";
+import express from 'express';
+import bodyparser from 'body-parser';
+import cors from 'cors';
+import routers from './routes/index';
 
 class App {
   constructor() {
@@ -18,9 +18,9 @@ class App {
     this.app.use(bodyparser.json());
     this.app.use(
       cors({
-        origin: "*",
+        origin: '*',
         credentials: false,
-      })
+      }),
     );
   }
 

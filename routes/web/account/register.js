@@ -1,8 +1,8 @@
-import registerAdmin from "../../../controllers/web/account/register";
-import { Router } from "express";
+import {Router} from 'express';
+import registerAdmin from '../../../controllers/web/account/register';
 
 const router = Router();
 
-router.post("/", registerAdmin);
+router.post('/', registerAdmin);
 
 export default router;

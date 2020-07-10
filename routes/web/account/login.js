@@ -1,8 +1,8 @@
-import loginAccount from "../../../controllers/web/account/login";
-import { Router } from "express";
+import {Router} from 'express';
+import loginAccount from '../../../controllers/web/account/login';
 
 const router = Router();
 
-router.post("/", loginAccount);
+router.post('/', loginAccount);
 
 export default router;

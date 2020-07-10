@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const Admin = sequelize.define(
-    "Admin",
+    'Admin',
     {
       email: {
         type: DataTypes.STRING(300),
@@ -13,9 +13,9 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      charset: "utf8mb4",
-      collate: "utf8mb4_general_ci",
-    }
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    },
   );
   return Admin;
 };
