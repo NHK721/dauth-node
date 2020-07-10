@@ -9,7 +9,7 @@ export default async (req, res) => {
     }
     const startDate = req.body.startDate || null;
     const endDate = req.body.endDate || null;
-    if (startDate == null || endDate == null) {
+    if (!startDate||!endDate) {
       return res.status(400).send({message: 'NEED FULL DATE'});
     }
     const users = await findAllUser(startDate, endDate);

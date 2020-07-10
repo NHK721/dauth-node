@@ -10,7 +10,7 @@ export default async (req, res) => {
   }
   const hash = await bcrypt.hash(req.body.password, salt);
   const result = createUser(req.body, hash);
-  if (result == 'Success') {
+  if (result === 'Success') {
     const bip39 = require('bip39');
     const mnemonic = bip39.generateMnemonic();
     return res.status(201).send(`Mnemonic Value: ${mnemonic}`);
