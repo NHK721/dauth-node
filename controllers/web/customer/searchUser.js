@@ -4,7 +4,7 @@ import findAllUser from "../../../DAO/web/findAllUser";
 export default async (req, res) => {
   try {
     const result = checkJWT(req.headers);
-    if (result == false) {
+    if (result === false) {
       return res.status(401).send({ message: "UNSERVICEABLE TOKEN" });
     }
     const startDate = req.body.startDate || null;
@@ -14,7 +14,7 @@ export default async (req, res) => {
     }
     const users = await findAllUser(startDate, endDate);
     let data = { users };
-    for (var i = 0; i < data.users.length; i++) {
+    for (let i = 0; i < data.users.length; i++) {
       let name = data.users[i].name;
       let email = data.users[i].email;
       data.users[i].name = name[0] + "**";

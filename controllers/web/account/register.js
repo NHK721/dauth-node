@@ -10,7 +10,7 @@ export default async (req, res) => {
   }
   const hash = await bcrypt.hash(req.body.password, salt);
   const result = createAdmin(req.body, hash);
-  if (result == "Success") {
+  if (result === "Success") {
     return res.status(201).send("Success");
   } else {
     return res.status(500).send("Fail");
