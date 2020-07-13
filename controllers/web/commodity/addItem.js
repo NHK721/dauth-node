@@ -17,12 +17,12 @@ export default async (req, res) => {
     });
 
     const imagePath = `/img/${req.file.filename}`;
-    const checkSaveSuccess = saveImage(req.file, imagePath);
+    const checkSaveSuccess = await saveImage(req.file, imagePath);
     if (checkSaveSuccess != true) {
       return res.status(500).send({message: 'FAIL SAVE IMAGE'});
     }
-    const imageId = findOneImage(imagePath);
-    const checkAddSuccess = addItem(req.body, imageId);
+    const imageId = await findOneImage(imagePath);
+    const checkAddSuccess = await addItem(req.body, imageId);
     if (checkAddSuccess != true) {
       return res.status.send({message: 'FAIL ADD ITEM'});
     }
