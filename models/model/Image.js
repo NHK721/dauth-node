@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const Image = sequelize.define(
-    "Image",
+    'Image',
     {
       path: {
         type: DataTypes.STRING(300),
@@ -36,9 +36,9 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      charset: "utf8mb4",
-      collate: "utf8mb4_general_ci",
-    }
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    },
   );
   Image.associate = (db) => {
     db.Image.hasMany(db.Commodity);

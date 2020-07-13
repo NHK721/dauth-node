@@ -1,4 +1,4 @@
-import db from "../../models/index";
+import db from '../../models/index';
 
 const findAllUser = (start, end, name) => {
   try {
@@ -6,24 +6,21 @@ const findAllUser = (start, end, name) => {
       console.log(start);
       console.log(end);
       return db.User.findAll({
-        attributes: ["id", "name", "email", "createdAt"],
-        where: { createdAt: { [db.Sequelize.Op.between]: [start, end] } },
+        attributes: ['id', 'name', 'email', 'createdAt'],
+        where: {createdAt: {[db.Sequelize.Op.between]: [start, end]}},
       });
     } else if (start == null && end == null) {
       return db.User.findAll({
-        attributes: ["id", "name", "email", "createdAt"],
-        where: { name },
+        attributes: ['id', 'name', 'email', 'createdAt'],
+        where: {name},
       });
     }
     return db.User.findAll({
-      attributes: ["id", "name", "email", "createdAt"],
-      where: {
-        createdAt: { [db.Sequelize.Op.between]: [start, end] },
-        name,
-      },
+      attributes: ['id', 'name', 'email', 'createdAt'],
+      where: {createdAt: {[db.Sequelize.Op.between]: [start, end]}},
     });
   } catch (e) {
-    throw e;
+    console.log('에러', e);
   }
 };
 

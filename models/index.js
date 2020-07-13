@@ -1,14 +1,14 @@
-import Sequelize from "sequelize";
-import User from "./model/User";
-import Order from "./model/Order";
-import Image from "./model/Image";
-import Credit_card from "./model/Credit_card";
-import Commodity from "./model/Commodity";
-import Card_bank from "./model/Card_bank";
-import Bank_account from "./model/Bank_account";
-import Bank from "./model/Bank";
-import Admin from "./model/Admin";
-import dotenv from "dotenv";
+import Sequelize from 'sequelize';
+import dotenv from 'dotenv';
+import User from './model/User';
+import Order from './model/Order';
+import Image from './model/Image';
+import Credit_card from './model/Credit_card';
+import Commodity from './model/Commodity';
+import Card_bank from './model/Card_bank';
+import Bank_account from './model/Bank_account';
+import Bank from './model/Bank';
+import Admin from './model/Admin';
 
 dotenv.config();
 
@@ -19,15 +19,15 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST,
-    username: "root",
+    username: 'root',
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
-    dialect: "mysql",
+    dialect: 'mysql',
     port: 3306,
-    ssl: "Amazon RDS",
+    ssl: 'Amazon RDS',
     logging: console.log,
-    timezone: "+09:00", //한국 시간 셋팅
-  }
+    timezone: '+09:00', // 한국 시간 셋팅
+  },
 );
 
 db.User = User(sequelize, Sequelize);

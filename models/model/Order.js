@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const Order = sequelize.define(
-    "Order",
+    'Order',
     {
       price: {
         type: DataTypes.INTEGER(),
@@ -9,9 +9,9 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      charset: "utf8mb4",
-      collate: "utf8mb4_general_ci",
-    }
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    },
   );
   Order.associate = (db) => {
     db.Order.belongsTo(db.Commodity);

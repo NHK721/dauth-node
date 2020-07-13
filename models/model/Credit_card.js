@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const Credit_card = sequelize.define(
-    "Credit_card",
+    'Credit_card',
     {
       number: {
         type: DataTypes.STRING(50),
@@ -9,9 +9,9 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      charset: "utf8mb4",
-      collate: "utf8mb4_general_ci",
-    }
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    },
   );
   Credit_card.associate = (db) => {
     db.Credit_card.belongsTo(db.User);

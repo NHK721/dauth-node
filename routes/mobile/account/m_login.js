@@ -1,8 +1,8 @@
-import loginMobileAccount from "../../../controllers/mobile/account/m_login";
-import { Router } from "express";
+import {Router} from 'express';
+import loginMobileAccount from '../../../controllers/mobile/account/m_login';
 
 const router = Router();
 
-router.post("/", loginMobileAccount);
+router.post('/', loginMobileAccount);
 
 export default router;

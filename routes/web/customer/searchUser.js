@@ -1,7 +1,7 @@
-import searchUser from "../../../controllers/web/customer/searchUser";
-import { Router } from "express";
+import {Router} from 'express';
+import searchUser from '../../../controllers/web/customer/searchUser';
 
 const router = Router();
-router.post("/", searchUser);
+router.post('/', searchUser);
 
 export default router;

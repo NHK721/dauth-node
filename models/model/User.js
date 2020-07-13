@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const User = sequelize.define(
-    "User",
+    'User',
     {
       email: {
         type: DataTypes.STRING(300),
@@ -10,7 +10,6 @@ export default (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING(30),
         allowNull: false,
-
       },
       password: {
         type: DataTypes.STRING(300),
@@ -36,9 +35,9 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      charset: "utf8mb4",
-      collate: "utf8mb4_general_ci",
-    }
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    },
   );
   User.associate = (db) => {
     db.User.hasMany(db.Bank_account);

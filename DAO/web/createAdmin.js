@@ -1,4 +1,4 @@
-import db from "../../models/index";
+import db from '../../models/index';
 
 const createAdmin = (req, hash) => {
   try {
@@ -6,9 +6,9 @@ const createAdmin = (req, hash) => {
       email: req.email,
       password: hash,
     });
-    return "Success";
+    return 'Success';
   } catch (e) {
-    return "Fail";
+    return 'Fail';
   }
 };
 

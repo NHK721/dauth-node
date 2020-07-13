@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const Bank_account = sequelize.define(
-    "Bank_account",
+    'Bank_account',
     {
       number: {
         type: DataTypes.STRING(50),
@@ -13,9 +13,9 @@ export default (sequelize, DataTypes) => {
       },
     },
     {
-      charset: "utf8mb4",
-      collate: "utf8mb4_general_ci",
-    }
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    },
   );
   Bank_account.associate = (db) => {
     db.Bank_account.belongsTo(db.User);

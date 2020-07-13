@@ -1,4 +1,4 @@
-import db from "../../models/index";
+import db from '../../models/index';
 
 const createUser = (req, hash) => {
   try {
@@ -9,11 +9,11 @@ const createUser = (req, hash) => {
       name: req.name,
       phone_number: req.phone_number,
       birthday: req.birthday,
-      avatar_url: req.avatar_url
+      avatar_url: req.avatar_url,
     });
-    return "Success";
+    return 'Success';
   } catch (e) {
-    return "Fail";
+    return 'Fail';
   }
 };
 
