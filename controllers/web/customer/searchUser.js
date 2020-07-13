@@ -9,15 +9,13 @@ export default async (req, res) => {
     }
     const startDate = req.body.startDate || null;
     const endDate = req.body.endDate || null;
-    if (startDate == null || endDate == null) {
-      return res.status(400).send({ message: "NEED FULL DATE" });
-    }
-    const users = await findAllUser(startDate, endDate);
+    const name = req.body.name || null;
+    const users = await findAllUser(startDate, endDate, name);
     let data = { users };
     for (var i = 0; i < data.users.length; i++) {
       let name = data.users[i].name;
       let email = data.users[i].email;
-      data.users[i].name = name[0] + "**";
+      data.users[i].name = name[0] + "**" + name[name.length - 1];
       data.users[i].email = email[0] + "***@****.com";
     }
     return res.status(200).send(data);

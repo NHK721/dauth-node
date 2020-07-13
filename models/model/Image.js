@@ -6,6 +6,34 @@ export default (sequelize, DataTypes) => {
         type: DataTypes.STRING(300),
         allowNull: false,
       },
+      originalname: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
+      encoding: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
+      mimetype: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
+      destination: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
+      filename: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
+      size: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
+      fieldname: {
+        type: DataTypes.STRING(300),
+        allowNull: false,
+      },
     },
     {
       charset: "utf8mb4",
