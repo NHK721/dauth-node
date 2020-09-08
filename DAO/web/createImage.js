@@ -1,4 +1,4 @@
-import db from "../../models/index";
+import db from '../../models/index';
 
 export default async (req, imagePath) => {
   try {
@@ -6,7 +6,7 @@ export default async (req, imagePath) => {
       filename: req.filename,
       originalname: req.originalname,
       encoding: req.encoding,
-      mimeType: req.mimetype,
+      mimetype: req.mimetype,
       destination: req.destination,
       fieldname: req.fieldname,
       path: imagePath,

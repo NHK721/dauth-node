@@ -2,14 +2,14 @@ export default (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',
     {
-      email: {
-        type: DataTypes.STRING(300),
-        allowNull: false,
-        unique: true,
-      },
       name: {
         type: DataTypes.STRING(30),
         allowNull: false,
+      },
+      email: {
+        type: DataTypes.STRING(300),
+        allowNull: true,
+        unique: true,
       },
       password: {
         type: DataTypes.STRING(300),
@@ -26,11 +26,12 @@ export default (sequelize, DataTypes) => {
         unique: true,
       },
       birthday: {
-        type: DataTypes.DATE(),
+        type: DataTypes.STRING(13),
         allowNull: false,
+        unique: true,
       },
-      avatar_url: {
-        type: DataTypes.STRING(300),
+      address: {
+        type: DataTypes.STRING(150),
         allowNull: false,
       },
     },

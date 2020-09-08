@@ -14,6 +14,11 @@ const findAllUser = (start, end, name) => {
         attributes: ['id', 'name', 'email', 'createdAt'],
         where: {name},
       });
+    } else if (name != null) {
+      return db.User.findAll({
+        attributes: ['id', 'name', 'email', 'createdAt'],
+        where: {name},
+      });
     }
     return db.User.findAll({
       attributes: ['id', 'name', 'email', 'createdAt'],

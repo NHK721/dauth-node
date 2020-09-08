@@ -1,10 +1,10 @@
-import db from "../../models/index";
+import db from '../../models/index';
 
-const findOneImage = (path) => {
+const findOneImage = (imagePath) => {
   try {
     return db.Image.findOne({
-      attributes: ["id"],
-      where: { path },
+      attributes: ['id'],
+      where: {path: imagePath},
     });
   } catch (e) {
     throw e;

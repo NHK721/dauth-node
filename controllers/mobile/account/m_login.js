@@ -8,8 +8,8 @@ export default async (req, res) => {
     return res.status(403).send({message: 'User not found'});
   }
   const result = await bcrypt.compare(req.body.password, user.password);
-  if (result) {
-    const token = jwt.sign(req.body, 'wecode');
+  if (result == true) {
+    const token = jwt.sign({user_id: user.id}, 'wecode');
     return res.status(200).send({Authentication: token});
   }
   return res.status(401).send({message: 'incorrect password'});

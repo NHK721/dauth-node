@@ -1,9 +1,12 @@
 import db from '../../models/index';
 
-const findOneUser = (req) => {
+const findOneUser = (_id) => {
   try {
     return db.User.findOne({
-      where: {account: req.account},
+      where: {id: _id},
+      attributes: {
+        exclude: ['password', 'createdAt', 'updatedAt'],
+      },
     });
   } catch (e) {
     throw e;

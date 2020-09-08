@@ -28,6 +28,6 @@ export default async (req, res) => {
     }
     return res.status.send({message: 'ADD NEW ITEM SUCCESS'});
   } catch (err) {
-    return res.status(400).send({message: err});
+    return res.status(400).send({message: 'err'});
   }
 };
